@@ -1,25 +1,24 @@
 from tkinter import *
 from TitleScreen import TitleScreen as ts
 from GameScreen import GameScreen as gs
+from HelpScreen import HelpScreen as hs
+
 
 import pygame
 
 class MainFrame(Tk):
     def __init__(self, *args, **kwargs):
-        # init method of the tk class
         Tk.__init__(self, *args, **kwargs)
         pygame.mixer.init()
 
-        # creating a container for all
         container = Frame(self)
         container.pack(side="top", fill="both", expand=True)
         container.grid_rowconfigure(0, weight=1)
         container.grid_columnconfigure(0, weight=1)
 
-        # creating a dictionary for page objects
         self.frames = {}
         
-        for screens in {ts.TitleScreen, gs.GameScreen}:
+        for screens in {ts.TitleScreen, gs.GameScreen, hs.HelpScreen}:
             page_name = screens.__name__
             frame = screens(container, self)
             frame.grid(row=0, column=0, sticky="NSEW")
