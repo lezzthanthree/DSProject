@@ -2,8 +2,7 @@ from tkinter import *
 from TitleScreen import TitleScreen as ts
 from GameScreen import GameScreen as gs
 from HelpScreen import HelpScreen as hs
-
-
+from DifficultyScreen import DifficultyScreen as ds
 import pygame
 
 class MainFrame(Tk):
@@ -18,7 +17,7 @@ class MainFrame(Tk):
 
         self.frames = {}
         
-        for screens in {ts.TitleScreen, gs.GameScreen, hs.HelpScreen}:
+        for screens in {ts.TitleScreen, gs.GameScreen, hs.HelpScreen, ds.DifficultyScreen}:
             page_name = screens.__name__
             frame = screens(container, self)
             frame.grid(row=0, column=0, sticky="NSEW")
@@ -38,10 +37,13 @@ window = MainFrame()
 screenwidth = window.winfo_screenwidth()
 screenheight = window.winfo_screenheight()
 
-x = (screenwidth/2) - 640/2
-y = (screenheight/2) - 480/2
+windowwidth = 640  #change by 800
+windowheight = 480 #change by 600
 
-window.geometry('640x480+%d+%d' % (x, y))
+x = (screenwidth/2) - windowwidth/2
+y = (screenheight/2) - windowheight/2
+
+window.geometry('%dx%d+%d+%d' % (windowwidth, windowheight, x, y))
 window.title("Crack The Code")
 icon = PhotoImage(file="icon.png")
 window.iconphoto(True, icon)

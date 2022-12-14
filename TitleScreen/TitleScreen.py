@@ -29,5 +29,5 @@ class TitleScreen(Frame):
     def changeFrame(self, controller):
         pygame.mixer.music.load("TitleScreen\\assets\\mus2.ogg")
         pygame.mixer.music.play(loops=-1)
-        controller.show_frame("GameScreen")
+        controller.show_frame("DifficultyScreen")
         return
