@@ -80,7 +80,7 @@ class GameScreen(Frame):
         self.key6.place(x=492.0, y=380.0)
         
         # history
-        self.before = Label(canvas, text="", fg="#ff0000", bg="#171717", font=("Determination Mono", 34), justify='center')
+        self.before = Label(canvas, text="", fg="#FFFFFF", bg="#171717", font=("Determination Mono", 34), justify='center')
         self.before.place(x=554, y=59)
 
         self.imgBtnValidate = PhotoImage(file="GameScreen\\assets\\crack.png")
