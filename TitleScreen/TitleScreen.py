@@ -13,15 +13,15 @@ class TitleScreen(Frame):
         pygame.mixer.music.load("TitleScreen\\assets\\mus.ogg")
         pygame.mixer.music.play(loops=-1)
 
-        canvas = Canvas(self, bg="#000000", height=480, width=640, bd=0, highlightthickness=0, relief="ridge")
+        canvas = Canvas(self, bg="#000000", height=600, width=800, bd=0, highlightthickness=0, relief="ridge")
         canvas.place(x=0, y=0)
 
-        self.title = PhotoImage(file="TitleScreen\\assets\\title.png")
-        canvas.create_image(320.0, 150.0, image=self.title)
+        self.bg = PhotoImage(file="TitleScreen\\assets\\bg.png")
+        canvas.create_image(0, 0, anchor="nw", image=self.bg)
 
-        self.imgBtnStart = PhotoImage(file="TitleScreen\\assets\\start.png")
+        self.imgBtnStart = PhotoImage(file="TitleScreen\\assets\\startbutton.png")
         btnStart = Button(self, image=self.imgBtnStart, borderwidth=0, highlightthickness=0, command=lambda: self.changeFrame(controller), relief="flat")
-        btnStart.place(x=190.0, y=300.0)
+        btnStart.place(x=245.0, y=222.0)
 
         # btnChange = Button(self, text="Change", command=lambda: controller.show_frame("GameScreen"), relief="flat")
         # btnChange.place(x=200.0, y=100.0, width=100.0, height=45.0)

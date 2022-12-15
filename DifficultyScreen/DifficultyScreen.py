@@ -11,7 +11,7 @@ class DifficultyScreen(Frame):
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
 
-        canvas = Canvas(self, bg="#000000", height=480, width=640, bd=0, highlightthickness=0, relief="ridge")
+        canvas = Canvas(self, bg="#000000", height=600, width=800, bd=0, highlightthickness=0, relief="ridge")
         canvas.place(x=0, y=0)
 
         # self.btnNormal = Button(self, borderwidth=0, highlightthickness=0,)
@@ -23,12 +23,15 @@ class DifficultyScreen(Frame):
         # self.btnNormal = canvas.create_image(320, 170, image=self.normal)
         # canvas.tag_bind(self.btnNormal, "<Button-1>", controller.show_frame("GameScreen"))
 
+        self.bg = PhotoImage(file="DifficultyScreen\\assets\\bg.png")
+        canvas.create_image(0, 0, anchor="nw", image=self.bg)
+
         self.imgBtnNormal = PhotoImage(file="DifficultyScreen\\assets\\normal.png")
         btnNormal = Button(self, image=self.imgBtnNormal, borderwidth=0, highlightthickness=0, command=lambda: controller.show_frame("GameScreen", 0), relief="flat")
-        btnNormal.place(x=163.0, y=130.0)
+        btnNormal.place(x=194.0, y=430.0)
 
         self.imgBtnHard = PhotoImage(file="DifficultyScreen\\assets\\hard.png")
         btnHard = Button(self, image=self.imgBtnHard, borderwidth=0, highlightthickness=0, command=lambda: controller.show_frame("GameScreen", 1), relief="flat")
-        btnHard.place(x=220.0, y=275.0)
+        btnHard.place(x=451.0, y=430.0)
 
     

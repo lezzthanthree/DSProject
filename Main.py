@@ -37,8 +37,8 @@ window = MainFrame()
 screenwidth = window.winfo_screenwidth()
 screenheight = window.winfo_screenheight()
 
-windowwidth = 640  #change by 800
-windowheight = 480 #change by 600
+windowwidth = 800  #change by 800
+windowheight = 600 #change by 600
 
 x = (screenwidth/2) - windowwidth/2
 y = (screenheight/2) - windowheight/2
